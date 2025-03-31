@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T-Shirt Name 10 T-Shirts Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../css/Buy T-Shirts.css">
+    <link rel="stylesheet" href="../css/T-Shirt Name 1.css">
+    <link rel="icon" href="../logo-regular.png">
+</head>
+<body>
+
+    <!-- navbar -->
+
+    <nav class="navbar navbar-light navbar-expand-lg border-bottom">
+        <div class="container-fluid">
+
+            <div class="offcanvas offcanvas-end" id="offcanvas">
+                <div class="offcanvas-header">
+                    <a href="login.html" class="nav-link">Login</a>
+                    <button class="btn btn-close" data-bs-dismiss="offcanvas"></button>
+                </div>
+
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="Buy T-Shirts.html" class="nav-link text-dark">Buy T-Shirts</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="WOMAN.html" class="nav-link text-dark">WOMEN</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="MAN.html" class="nav-link text-dark">MEN</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="About.html" class="nav-link text-dark">ABOUT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="contact.html" class="nav-link text-dark">CONTACT</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="navbar-brand justify-content-start d-flex align-items-center flex-grow-1 W-100">
+                <a href="../index.html" class="navbar-brand"><img src="../logo-regular.png" alt=""></a>
+            </div>
+
+
+            <div class="containerNavRight d-flex align-items-center gap-lg-5 gap-4">
+                <div class="containerSearch">
+                    <a href="search.html" class="nav-link"><i class="bi bi-search"></i></a>
+                </div>
+                <div class="containershopping d-flex gap-2 align-items-center" style="cursor: pointer;"
+                    data-bs-toggle="offcanvas" data-bs-target="#offcanvasEnd">
+                    <div class="totalContainer mt-2">
+                        <h6 class="total" style="user-select: none; font-size: 12px;">$0.00</h6>
+                    </div>
+
+                    <div class="containerCoutn position-relative">
+                        <i class="bi bi-basket-fill"></i>
+
+                        <h6 class="position-absolute countShopping"
+                            style="top: -35%; right: -35%; user-select: none; font-size: 12px;">0</h6>
+                    </div>
+                </div>
+
+                <div class="containerLoing d-none d-lg-block">
+                    <a href="login.html" class="nav-link">Login</a>
+                </div>
+                <button class="navbar-toggler shadow-none" data-bs-toggle="offcanvas" data-bs-target="#offcanvas">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="containerchangeFont d-flex justify-content-center align-items-center p-3 bg-light rounded-2 shadow"
+        data-bs-toggle="offcanvas" data-bs-target="#offcanvasCs"
+        style="width: 120px; height: 40px; cursor: pointer; position: fixed; top: 50%; right: 0; transform: translateY(-50%); z-index: 1000;">
+        <div class="container d-flex gap-2 align-items-center justify-content-center mt-2">
+            <p><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNCAxNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4gPHBhdGggZD0iTTcgMC4yNUMzLjI3MjUgMC4yNSAwLjI1IDMuMjcyNSAwLjI1IDdDMC4yNSAxMC43Mjc1IDMuMjcyNSAxMy43NSA3IDEzLjc1QzcuNjIyNSAxMy43NSA4LjEyNSAxMy4yNDc1IDguMTI1IDEyLjYyNUM4LjEyNSAxMi4zMzI1IDguMDEyNSAxMi4wNyA3LjgzMjUgMTEuODY3NUM3LjY2IDExLjY3MjUgNy41NDc1IDExLjQxIDcuNTQ3NSAxMS4xMjVDNy41NDc1IDEwLjUwMjUgOC4wNSAxMCA4LjY3MjUgMTBIMTBDMTIuMDcgMTAgMTMuNzUgOC4zMiAxMy43NSA2LjI1QzEzLjc1IDIuOTM1IDEwLjcyNzUgMC4yNSA3IDAuMjVaTTIuODc1IDdDMi4yNTI1IDcgMS43NSA2LjQ5NzUgMS43NSA1Ljg3NUMxLjc1IDUuMjUyNSAyLjI1MjUgNC43NSAyLjg3NSA0Ljc1QzMuNDk3NSA0Ljc1IDQgNS4yNTI1IDQgNS44NzVDNCA2LjQ5NzUgMy40OTc1IDcgMi44NzUgN1pNNS4xMjUgNEM0LjUwMjUgNCA0IDMuNDk3NSA0IDIuODc1QzQgMi4yNTI1IDQuNTAyNSAxLjc1IDUuMTI1IDEuNzVDNS43NDc1IDEuNzUgNi4yNSAyLjI1MjUgNi4yNSAyLjg3NUM2LjI1IDMuNDk3NSA1Ljc0NzUgNCA1LjEyNSA0Wk04Ljg3NSA0QzguMjUyNSA0IDcuNzUgMy40OTc1IDcuNzUgMi44NzVDNy43NSAyLjI1MjUgOC4yNTI1IDEuNzUgOC44NzUgMS43NUM5LjQ5NzUgMS43NSAxMCAyLjI1MjUgMTAgMi44NzVDMTAgMy40OTc1IDkuNDk3NSA0IDguODc1IDRaTTExLjEyNSA3QzEwLjUwMjUgNyAxMCA2LjQ5NzUgMTAgNS44NzVDMTAgNS4yNTI1IDEwLjUwMjUgNC43NSAxMS4xMjUgNC43NUMxMS43NDc1IDQuNzUgMTIuMjUgNS4yNTI1IDEyLjI1IDUuODc1QzEyLjI1IDYuNDk3NSAxMS43NDc1IDcgMTEuMTI1IDdaIiBmaWxsPSIjMjU2M0VCIj48L3BhdGg+IDwvc3ZnPg=="
+                    alt=""></p>
+            <h6 style="user-select: none;">Customize</h6>
+        </div>
+    </div>
+
+    <div class="offcanvas offcanvas-end" id="offcanvasCs">
+        <div class="offcanvas-header shadow d-flex align-items-center p-4">
+            <h6>T-Shirts Store</h6>
+
+            <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+
+        <div class="offcanvas-body">
+            <div class="container">
+                <p style="color: gray; font-size: 12px;">Try different fonts from
+                    the options below.</p>
+            </div>
+
+            <div class="container">
+                <h6 class="fw-bold">Try Other Fonts</h6>
+            </div>
+
+            <div class="container containerBtnCs">
+                <button class="btn btn-outline-secondary btn-lg btnChangeF active">Aa</button>
+                <button class="btn btn-outline-secondary btn-lg btnChangeF">Aa</button>
+                <button class="btn btn-outline-secondary btn-lg btnChangeF">Aa</button>
+                <button class="btn btn-outline-secondary btn-lg btnChangeF">Aa</button>
+                <button class="btn btn-outline-secondary btn-lg btnChangeF">Aa</button>
+                <button class="btn btn-outline-secondary btn-lg btnChangeF">Aa</button>
+                <button class="btn btn-outline-secondary btn-lg btnChangeF">Aa</button>
+                <button class="btn btn-outline-secondary btn-lg btnChangeF">Aa</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="offcanvas offcanvas-end" id="offcanvasEnd">
+        <div class="offcanvas-header">
+            <div class="offcanvas-title border-bottom d-flex align-items-center justify-content-between w-100 py-2">
+                <h6 style="font-size: 14px; font-weight: bold;">Shopping Cart</h6>
+
+                <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+            </div>
+        </div>
+
+        <div class="offcanvas-body">
+
+            <div class="cartbox"></div>
+            <div class="containerNoItem justify-content-center align-items-center">
+                <h6 style="font-size: 14px;">No products in the cart.</h6>
+            </div>
+
+        </div>
+
+        <div class="offcanvas-footer">
+            <div class="containerGoShopping">
+                <a href="Buy T-Shirts.html" class="nav-link p-2 w-100"><button class="btn btn-dark w-100">Continue
+                        shopping</button></a>
+            </div>
+
+            <div class="containerTotalCart">
+                <div class="containerSubTotal d-flex justify-content-between align-items-center p-2 border-top border-bottom">
+                    <h6 style="font-size: 14px; font-weight: bold;">Subtotal:</h6>
+
+                    <h6 class="subTotal" style="font-size: 14px; font-weight: bold;">$0.00</h6>
+                </div>
+
+                <div class="containerViweCart p-2 pt-4">
+                    <a href="Cart.html" class="nav-link"><button class="w-100 btn btn-dark fw-bold">View cart</button></a>
+                </div>
+
+                <div class="containerCheckout p-2">
+                    <a href="checkout.html" class="nav-link"><button class="w-100 btn btn-dark fw-bold">Checkout</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="overlayImg"></div>
+    <div class="containerImgZoom">
+        <button class="btn btn-outline-secondary clickShowImg" id="back">
+            <</button>
+                <img src="https://websitedemos.net/t-shirts-store-04/wp-content/uploads/sites/1115/2022/07/product-09-a-300x366.jpg"
+                    alt="" class="imgShow">
+                <button class="btn btn-outline-secondary clickShowImg" id="next">></button>
+    </div>
+
+    <i class="bi bi-x closeShowImg"></i>
+
+    <div class="containerSavingLoading hidden">
+        <h6 style="font-size: 15px;" class="fw-bold">Saving change...</h6>
+        <div class="loading mt-3 fw-bold"></div>
+
+    </div>
+    <div class="overlayLoading"></div>
+
+
+
+    <div class="container py-5 containerAddCart" data-id="9" data-price="$36.00">
+        <div class="row">
+            <div class="col-lg-6 col-sm-12 position-relative">
+                <div class="containerIn containerGrid2">
+                    <div class="containerClickchangeImg">
+                        <button class="btn btn-outline-secondary" id="left"><</button>
+                    </div>
+                    <div class="containerimg imgGrid imgShowrp active">
+                        <img src="https://websitedemos.net/t-shirts-store-04/wp-content/uploads/sites/1115/2022/07/product-09-a-300x366.jpg"
+                            alt="" width="100%" class="imgZoom">
+                    </div>
+                    <div class="containerimg imgShowrp imgActive">
+                        <img src="https://websitedemos.net/t-shirts-store-04/wp-content/uploads/sites/1115/2022/07/product-001-b-246x300.jpg"
+                            alt="" width="100%" data-color="Black" class="imgAddToCart imgZoom">
+                    </div>
+                    <div class="containerimg imgShowrp imgActive">
+                        <img src="https://websitedemos.net/t-shirts-store-04/wp-content/uploads/sites/1115/2022/07/product-01-c.jpg"
+                            alt="" width="100%" data-color="Orange" class="imgAddToCart imgZoom">
+                    </div>
+                    <div class="containerimg imgShowrp imgActive">
+                        <img src="https://websitedemos.net/t-shirts-store-04/wp-content/uploads/sites/1115/2022/07/product-01-d-246x300.jpg"
+                            alt="" width="100%" data-color="White" class="imgAddToCart imgZoom">
+                    </div>
+                    <div class="containerClickchangeImg">
+                        <button class="btn btn-outline-secondary" id="right">></button>
+                    </div>
+                </div>
+
+                <div class="activeDot">
+                    <span class="active activeSpan"></span>
+                    <span class="activeSpan"></span>
+                    <span class="activeSpan"></span>
+                    <span class="activeSpan"></span>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-sm-12 mt-lg-0  mt-4">
+                <div class="containerTop border-bottom py-2">
+                    <h6 style="font-size: 14px; color: gray;">MEN</h6>
+
+                    <h5 class="title fw-bold">T-Shirt Name 10</h5>
+
+                    <div class="containerPrice d-flex align-items-center gap-2">
+                        <p class="price fw-bold">$36.00</p>
+
+                        <p class="text-secondary" style="font-size: 14px;">& Free Shipping</p>
+                    </div>
+                    <p class="text-secondary" style="font-size: 14px; margin-top: -10px;">Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit. Cras dapibus interdum eros. In blandit velit
+                        a lacus laoreet dictum. Maecenas vel vulputate nulla. Ut nec enim vel tortor aliquet varius.</p>
+
+                    <div class="containerColor d-flex gap-3 py-2">
+                        <div class="color" data-color="Black"
+                            style="width: 15px; height: 15px; background-color: black; outline: 1px solid gray; cursor: pointer;">
+                        </div>
+                        <div class="color" data-color="Orange"
+                            style="width: 15px; height: 15px; background-color: #FAEDEB; outline: 1px solid gray; cursor: pointer;">
+                        </div>
+                        <div class="color" data-color="White"
+                            style="width: 15px; height: 15px; background-color: white; outline: 1px solid gray; cursor: pointer;">
+                        </div>
+                    </div>
+
+                    <div class="containerSize d-flex gap-3 py-2" style="flex-wrap: wrap;">
+                        <div class="size d-flex justify-content-center align-items-center"
+                            style="width: 20px; height: 20px; outline: 1px solid gray; cursor: pointer;" data-stock="15"
+                            data-name="XS" data-id-size="XS-0">
+                            <h6 class="my-2" style="font-size: 10px; color: gray;">XS
+                            </h6>
+                        </div>
+                        <div class="size d-flex justify-content-center align-items-center"
+                            style="width: 20px; height: 20px; outline: 1px solid gray; cursor: pointer;" data-stock="2"
+                            data-name="S" data-id-size="S-0">
+                            <h6 class="my-2" style="font-size: 10px; color: gray;">S</h6>
+                        </div>
+                        <div class="size d-flex justify-content-center align-items-center"
+                            style="width: 20px; height: 20px; outline: 1px solid gray; cursor: pointer;" data-stock="10"
+                            data-name="M" data-id-size="M-0">
+                            <h6 class="my-2" style="font-size: 10px; color: gray;">M</h6>
+                        </div>
+                        <div class="size d-flex justify-content-center align-items-center"
+                            style="width: 20px; height: 20px; outline: 1px solid gray; cursor: pointer;" data-stock="7"
+                            data-name="L" data-id-size="L-0">
+                            <h6 class="my-2" style="font-size: 10px; color: gray;">L</h6>
+                        </div>
+                        <div class="size d-flex justify-content-center align-items-center"
+                            style="width: 20px; height: 20px; outline: 1px solid gray; cursor: pointer;" data-stock="8"
+                            data-name="XL" data-id-size="XL-0">
+                            <h6 class="my-2" style="font-size: 10px; color: gray;">XL</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="containerAddToCart py-2 d-flex gap-3 border-bottom">
+                    <button class="addToCart btn btn-dark">Add to cart</button>
+                </div>
+
+                <div class="containerSKU pt-2 d-flex align-items-center pb-4 border-bottom gap-4">
+                    <h6 style="font-size: 10px; color: gray;">SKU: N/A</h6>
+                    <h6 style="font-size: 10px; color: gray;">Category: Men</h6>
+                </div>
+
+                <div class="containerDiscription py-2 border-bottom" data-bs-toggle="collapse"
+                    data-bs-target="#collapse">
+                    <h6 class="decs fw-bold d-flex justify-content-between mt-2"
+                        style="cursor: pointer; user-select: none;">Description <span class="dcsDnone active">-</span>
+                        <span class="dcsDnone">+</span>
+                    </h6>
+                </div>
+                <div class="collapse show" id="collapse">
+
+                    <div class="containerCollapTop py-5 border-bottom">
+                        <h6 class="fw-bold" style="font-size: 14px; color: gray;">About the product
+                        </h6>
+
+                        <p style="font-size: 10px; color: gray;">Our T-Shirts are lorem ipsum dolor sit amet,
+                            consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus
+                            leo.</p>
+
+                        <ul style="list-style-type: circle;">
+                            <li style="font-size: 14px; color: gray;">100% Cotton</li>
+                            <li style="font-size: 14px; color: gray;">260gsm</li>
+                            <li style="font-size: 14px; color: gray;">Breathable Fabric</li>
+                        </ul>
+                    </div>
+
+
+                    <div class="containerCollapBottom py-5 border-bottom">
+                        <h6 class="fw-bold" style="font-size: 14px; color: gray;">Size & Fit
+                        </h6>
+
+                        <ul style="list-style-type: circle;">
+                            <li style="font-size: 14px; color: gray;">Model is wearing size M and is 6'1"</li>
+                            <li style="font-size: 14px; color: gray;">Standard fit for a relaxed, easy feel</li>
+                        </ul>
+                    </div>
+
+                    <div class="containerCollapBottom py-5 border-bottom">
+                        <h6 class="fw-bold" style="font-size: 14px; color: gray;">Free delivery & returns
+                        </h6>
+
+                        <p style="font-size: 10px; color: gray;">Free standard delivery on orders over $60.</p>
+
+
+                        <ul style="list-style-type: circle;">
+                            <li style="font-size: 14px; color: gray;">
+                                You can return your order for any reason, free of charge, within 30 days</li>
+                            <li style="font-size: 14px; color: gray;">We also offer a Free-of-Charge shipping label</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="containerDiscription py-2 border-bottom" data-bs-toggle="collapse"
+                    data-bs-target="#collapse2">
+                    <h6 class="decs fw-bold d-flex justify-content-between mt-2"
+                        style="cursor: pointer; user-select: none;">Additional information <span
+                            class="dcsDnone active">-</span>
+                        <span class="dcsDnone">+</span>
+                    </h6>
+                </div>
+
+                <div class="collapse" id="collapse2">
+                    <table class="table">
+                        <tr>
+                            <td style="font-size: 14px;">Color</td>
+                            <td style="font-size: 14px; color: gray;">Black, Orange, White</td>
+                        </tr>
+                        <tr>
+                            <td style="font-size: 14px;">Size</td>
+                            <td style="font-size: 14px; color: gray;">XS, S, M, L, XL</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="containerDiscription py-2 border-bottom">
+                    <h6 class="decs fw-bold d-flex justify-content-between mt-2" data-bs-toggle="collapse"
+                        data-bs-target="#collapse1" style="cursor: pointer; user-select: none;">Reviews (0)<span
+                            class="dcsDnone active">-</span>
+                        <span class="dcsDnone">+</span>
+                    </h6>
+                    <div class="collapse" id="collapse1">
+
+                        <p style="font-size: 14px; color: gray;">There are no reviews yet.</p>
+
+                        <div class="cart border p-4">
+                            <div class="cart-body">
+                                <h6 style="color: gray;">Be the first to review “T-Shirt Name 10”</h6>
+                                <p style="font-size: 14px; color: gray;">Your email address will not be published.
+                                    Required fields are marked *</p>
+                                <div class="containerRating">
+                                    <p style="font-size: 14px; color: gray;">Your rating *</p>
+
+                                    <div class="containerStar">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-half"></i>
+                                    </div>
+                                </div>
+
+                                <div class="containerReview mt-3">
+                                    <p style="font-size: 14px; color: gray;">Your review *</p>
+                                    <textarea name="" id="" class="form-control" required></textarea>
+                                </div>
+
+                                <div class="row mt-3">
+                                    <div class="col-lg-6 col-sm-12">
+                                        <p style="font-size: 14px; color: gray;">Name *</p>
+                                        <input type="text" class="form-control" required>
+                                    </div>
+
+                                    <div class="col-lg-6 col-sm-12 mt-lg-0 mt-2">
+                                        <p style="font-size: 14px; color: gray;">Email *</p>
+                                        <input type="email" class="form-control" required>
+                                    </div>
+                                </div>
+
+                                <div class="containerCheck mt-2">
+                                    <input type="checkbox" class="form-check-input" required>
+                                    <p>Save my name, email, and website in this browser for the next time I comment.</p>
+                                </div>
+
+                                <button class="btn btn-dark">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container py-2">
+        <h1 class="fw-bold">Related products</h1>
+    </div>
+
+    <div class="containerGridrelate container">
+        <div class="containerProduct mt-4">
+            <div class="containerimg">
+                <a href="T-Shirt Name 6.html" class="nav-link"><img
+                        src="https://websitedemos.net/t-shirts-store-04/wp-content/uploads/sites/1115/2022/07/product-03-a-300x366.jpg"
+                        alt="" width="100%" class="imgChange"></a>
+            </div>
+            <div class="containerContent">
+                <h6 class="my-2" style="font-size: 10px; color: gray;">Men</h6>
+
+                <a href="T-Shirt Name 6.html" class="nav-link">
+                    <h5 class="title fw-bold">T-Shirt Name 6</h5>
+                </a>
+
+                <h6 class="price fw-bold" style="font-size: 14px; color: gray;">$22.00</h6>
+
+            </div>
+        </div>
+
+        <div class="containerProduct mt-4">
+            <div class="containerimg">
+                <a href="T-Shirt Name 8.html" class="nav-link"><img
+                        src="https://websitedemos.net/t-shirts-store-04/wp-content/uploads/sites/1115/2022/07/product-10-a.jpg"
+                        alt="" width="100%" class="imgChange"></a>
+            </div>
+            <div class="containerContent">
+                <h6 class="my-2" style="font-size: 10px; color: gray;">Men</h6>
+
+                <a href="T-Shirt Name 8.html" class="nav-link">
+                    <h5 class="title fw-bold">T-Shirt Name 8</h5>
+                </a>
+
+                <h6 class="price fw-bold" style="font-size: 14px; color: gray;">$25.00
+                </h6>
+
+            </div>
+        </div>
+        <div class="containerProduct mt-4">
+            <div class="containerimg">
+                <a href="T-Shirt Name 4.html" class="nav-link"><img
+                        src="https://websitedemos.net/t-shirts-store-04/wp-content/uploads/sites/1115/2022/07/product-05-a-300x366.jpg"
+                        alt="" width="100%" class="imgChange"></a>
+            </div>
+            <div class="containerContent">
+                <h6 class="my-2" style="font-size: 10px; color: gray;">Men</h6>
+
+                <a href="T-Shirt Name 4.html" class="nav-link">
+                    <h5 class="title fw-bold">T-Shirt Name 4</h5>
+                </a>
+
+                <h6 class="price fw-bold" style="font-size: 14px; color: gray;">$19.00</h6>
+            </div>
+        </div>
+        <div class="containerProduct mt-4">
+            <div class="containerimg">
+                <a href="T-Shirt Name 2.html" class="nav-link"><img
+                        src="https://websitedemos.net/t-shirts-store-04/wp-content/uploads/sites/1115/2022/07/product-02-a.jpg"
+                        alt="" width="100%" class="imgChange"></a>
+            </div>
+            <div class="containerContent">
+                <h6 class="my-2" style="font-size: 10px; color: gray;">Men</h6>
+
+                <a href="T-Shirt Name 2.html" class="nav-link">
+                    <h5 class="title fw-bold">T-Shirt Name 9</h5>
+                </a>
+
+                <h6 class="price fw-bold" style="font-size: 14px; color: gray;">$36.00</h6>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- footer  -->
+
+    <div class="containerFooter bg-light py-5 mt-4">
+        <div class="container footer">
+            <div class="container-footer">
+                <img src="../logo-regular.png" alt="">
+
+                <h6 class="mt-2">T-Shirth Store company</h6>
+            </div>
+
+            <div class="container-footer">
+                <a href="#" style="text-transform: uppercase;" class="nav-link">weeply themes</a>
+                <a href="#" style="text-transform: uppercase;" class="nav-link">pre-sale faqs</a>
+                <a href="#" style="text-transform: uppercase;" class="nav-link">submit a ticket</a>
+            </div>
+
+            <div class="container-footer">
+                <a href="#" style="text-transform: uppercase;" class="nav-link">services</a>
+                <a href="#" style="text-transform: uppercase;" class="nav-link">themes tweak</a>
+            </div>
+
+            <div class="container-footer">
+                <a href="#" style="text-transform: uppercase;" class="nav-link">showcase</a>
+                <a href="#" style="text-transform: uppercase;" class="nav-link">widgetkit</a>
+                <a href="#" style="text-transform: uppercase;" class="nav-link">support</a>
+            </div>
+
+            <div class="container-footer">
+                <a href="Buy T-Shirts.html" style="text-transform: uppercase;" class="nav-link">Buy
+                    T-Shirts</a>
+                <a href="MAN.html" style="text-transform: uppercase;" class="nav-link">men</a>
+                <a href="WOMAN.html" style="text-transform: uppercase;" class="nav-link">women</a>
+                <a href="About.html" style="text-transform: uppercase;" class="nav-link">about</a>
+                <a href="contact.html" style="text-transform: uppercase;" class="nav-link">contact</a>
+            </div>
+        </div>
+
+        <div class="container">
+            <hr>
+        </div>
+
+        <div class="contianer d-flex justify-content-center flex-column align-items-center text-center">
+            <div class="container d-flex justify-content-center gap-2">
+                <a href="#" class="nav-link border rounded-circle p-lg-3 p-2"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="nav-link border rounded-circle p-lg-3 p-2"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="nav-link border rounded-circle p-lg-3 p-2"><i class="bi bi-wifi"></i></a>
+                <a href="#" class="nav-link border rounded-circle p-lg-3 p-2"><i class="bi bi-google"></i></a>
+                <a href="#" class="nav-link border rounded-circle p-lg-3 p-2"><i class="bi bi-three-dots"></i></a>
+            </div>
+            <div class="container mt-2">
+                <h6 class="text-center">©Copy. All rights reversed</h6>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- add to cart js -->
+
+    <script src="../js/addTocart.js"></script>
+
+    <!-- T-Shirt Name 10 js -->
+
+    <script src="../js/T-Shirt Name 10.js"></script>
+
+    <!-- ff js  -->
+
+    <script src="../js/font.js"></script>
+
+</body>
+
+</html>
